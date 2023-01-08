@@ -1,0 +1,100 @@
+/* font-family: 'Bebas Neue', cursive;
+font-family: 'Inter', sans-serif; */
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+body h1 {
+  color: white;
+  font-family: "Bebas Neue", cursive;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.frame {
+  height: 300px;
+  width: 300px;
+  /* border: 1px solid teal; */
+  perspective: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cube {
+  height: 200px;
+  width: 200px;
+  transform: translateZ(-100px) rotateY(30deg);
+  position: relative;
+  transition: 1s;
+  transform-style: preserve-3d;
+}
+
+.cube:hover {
+  transform: translateZ(-100px) rotateX(180deg) rotateY(180deg);
+}
+
+.cube div {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  background: url("sprite.png") no-repeat;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+
+.front {
+  background: red;
+  transform: rotateY(0deg) translateZ(100px);
+}
+.right {
+  background: green;
+  transform: rotateY(90deg) translateZ(100px);
+}
+.back {
+  background: blue;
+  transform: rotateY(0deg) translateZ(-100px);
+}
+.left {
+  background: yellow;
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.top {
+  background: orange;
+  transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+  background: indigo;
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.textsInfo {
+  padding: 1rem;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+.textsInfo p {
+  text-align: center;
+}
+
+.textsInfo h1 {
+  color: #f0db4f;
+}
